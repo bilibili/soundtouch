@@ -62,6 +62,6 @@ void ijk_soundtouch_destroy(void *handle) {
     SoundTouch *handle_ptr = (SoundTouch*)handle;
     if (handle_ptr == NULL)
         return;
-
+    handle_ptr->clear();
     delete handle_ptr;
 }
