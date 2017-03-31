@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-/// 
+///
 /// Cubic interpolation routine.
 ///
 /// Author        : Copyright (c) Olli Parviainen
@@ -41,7 +41,7 @@
 using namespace soundtouch;
 
 // cubic interpolation coefficients
-static const float _coeffs[]= 
+static const float _coeffs[]=
 { -0.5f,  1.0f, -0.5f, 0.0f,
    1.5f, -2.5f,  0.0f, 1.0f,
   -1.5f,  2.0f,  0.5f, 0.0f,
@@ -60,10 +60,10 @@ void InterpolateCubic::resetRegisters()
 }
 
 
-/// Transpose mono audio. Returns number of produced output samples, and 
+/// Transpose mono audio. Returns number of produced output samples, and
 /// updates "srcSamples" to amount of consumed source samples
-int InterpolateCubic::transposeMono(SAMPLETYPE *pdest, 
-                    const SAMPLETYPE *psrc, 
+int InterpolateCubic::transposeMono(SAMPLETYPE *pdest,
+                    const SAMPLETYPE *psrc,
                     int &srcSamples)
 {
     int i;
@@ -105,10 +105,10 @@ int InterpolateCubic::transposeMono(SAMPLETYPE *pdest,
 }
 
 
-/// Transpose stereo audio. Returns number of produced output samples, and 
+/// Transpose stereo audio. Returns number of produced output samples, and
 /// updates "srcSamples" to amount of consumed source samples
-int InterpolateCubic::transposeStereo(SAMPLETYPE *pdest, 
-                    const SAMPLETYPE *psrc, 
+int InterpolateCubic::transposeStereo(SAMPLETYPE *pdest,
+                    const SAMPLETYPE *psrc,
                     int &srcSamples)
 {
     int i;
@@ -152,10 +152,10 @@ int InterpolateCubic::transposeStereo(SAMPLETYPE *pdest,
 }
 
 
-/// Transpose multi-channel audio. Returns number of produced output samples, and 
+/// Transpose multi-channel audio. Returns number of produced output samples, and
 /// updates "srcSamples" to amount of consumed source samples
-int InterpolateCubic::transposeMulti(SAMPLETYPE *pdest, 
-                    const SAMPLETYPE *psrc, 
+int InterpolateCubic::transposeMulti(SAMPLETYPE *pdest,
+                    const SAMPLETYPE *psrc,
                     int &srcSamples)
 {
     int i;

@@ -58,12 +58,12 @@ using namespace std;
     // Macro for Win32 standard input/output stream support: Sets a file stream into binary mode
     #define SET_STREAM_TO_BIN_MODE(f) (_setmode(_fileno(f), _O_BINARY))
 #else
-    // Not needed for GNU environment... 
+    // Not needed for GNU environment...
     #define SET_STREAM_TO_BIN_MODE(f) {}
 #endif
 
 
-static const char _helloText[] = 
+static const char _helloText[] =
     "\n"
     "   SoundStretch v%s -  Written by Olli Parviainen 2001 - 2015\n"
     "==================================================================\n"
@@ -116,7 +116,7 @@ static void openFiles(WavInFile **inFile, WavOutFile **outFile, const RunParamet
 
 
 
-// Sets the 'SoundTouch' object up according to input file sound format & 
+// Sets the 'SoundTouch' object up according to input file sound format &
 // command line parameters
 static void setup(SoundTouch *pSoundTouch, const WavInFile *inFile, const RunParameters *params)
 {
@@ -204,10 +204,10 @@ static void process(SoundTouch *pSoundTouch, WavInFile *inFile, WavOutFile *outF
         // - 'receiveSamples' doesn't necessarily return any samples at all
         //   during some rounds!
         // - On the other hand, during some round 'receiveSamples' may have more
-        //   ready samples than would fit into 'sampleBuffer', and for this reason 
+        //   ready samples than would fit into 'sampleBuffer', and for this reason
         //   the 'receiveSamples' call is iterated for as many times as it
         //   outputs samples.
-        do 
+        do
         {
             nSamples = pSoundTouch->receiveSamples(sampleBuffer, buffSizeSamples);
             outFile->write(sampleBuffer, nSamples * nChannels);
@@ -217,7 +217,7 @@ static void process(SoundTouch *pSoundTouch, WavInFile *inFile, WavOutFile *outF
     // Now the input file is processed, yet 'flush' few last samples that are
     // hiding in the SoundTouch's internal processing pipeline.
     pSoundTouch->flush();
-    do 
+    do
     {
         nSamples = pSoundTouch->receiveSamples(sampleBuffer, buffSizeSamples);
         outFile->write(sampleBuffer, nSamples * nChannels);
@@ -241,7 +241,7 @@ static void detectBPM(WavInFile *inFile, RunParameters *params)
     nChannels = (int)inFile->getNumChannels();
     assert(BUFF_SIZE % nChannels == 0);
 
-    // Process the 'inFile' in small blocks, repeat until whole file has 
+    // Process the 'inFile' in small blocks, repeat until whole file has
     // been processed
     while (inFile->eof() == 0)
     {
@@ -291,7 +291,7 @@ int main(const int nParams, const char * const paramStr[])
 
     fprintf(stderr, _helloText, SoundTouch::getVersionString());
 
-    try 
+    try
     {
         // Parse command line parameters
         params = new RunParameters(nParams, paramStr);
@@ -321,8 +321,8 @@ int main(const int nParams, const char * const paramStr[])
         delete params;
 
         fprintf(stderr, "Done!\n");
-    } 
-    catch (const runtime_error &e) 
+    }
+    catch (const runtime_error &e)
     {
         // An exception occurred during processing, display an error message
         fprintf(stderr, "%s\n", e.what());

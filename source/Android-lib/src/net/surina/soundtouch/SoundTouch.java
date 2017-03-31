@@ -20,11 +20,11 @@ public final class SoundTouch
     // Native interface function that returns SoundTouch version string.
     // This invokes the native c++ routine defined in "soundtouch-jni.cpp".
     public native final static String getVersionString();
-    
+
     private native final void setTempo(long handle, float tempo);
 
     private native final void setPitchSemiTones(long handle, float pitch);
-    
+
     private native final void setSpeed(long handle, float speed);
 
     private native final int processFile(long handle, String inputFile, String outputFile);
@@ -32,18 +32,18 @@ public final class SoundTouch
     public native final static String getErrorString();
 
     private native final static long newInstance();
-    
+
     private native final void deleteInstance(long handle);
-    
+
     long handle = 0;
-    
-    
+
+
     public SoundTouch()
     {
-    	handle = newInstance();    	
+    	handle = newInstance();
     }
-    
-    
+
+
     public void close()
     {
     	deleteInstance(handle);
@@ -62,7 +62,7 @@ public final class SoundTouch
     	setPitchSemiTones(handle, pitch);
     }
 
-    
+
     public void setSpeed(float speed)
     {
     	setSpeed(handle, speed);
@@ -74,7 +74,7 @@ public final class SoundTouch
     	return processFile(handle, inputFile, outputFile);
     }
 
-    
+
     // Load the native library upon startup
     static
     {

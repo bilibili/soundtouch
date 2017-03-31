@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////////////////////////////////////
-/// 
-/// Sample interpolation routine using 8-tap band-limited Shannon interpolation 
+///
+/// Sample interpolation routine using 8-tap band-limited Shannon interpolation
 /// with kaiser window.
 ///
 /// Notice. This algorithm is remarkably much heavier than linear or cubic
@@ -51,14 +51,14 @@ class InterpolateShannon : public TransposerBase
 {
 protected:
     void resetRegisters();
-    int transposeMono(SAMPLETYPE *dest, 
-                        const SAMPLETYPE *src, 
+    int transposeMono(SAMPLETYPE *dest,
+                        const SAMPLETYPE *src,
                         int &srcSamples);
-    int transposeStereo(SAMPLETYPE *dest, 
-                        const SAMPLETYPE *src, 
+    int transposeStereo(SAMPLETYPE *dest,
+                        const SAMPLETYPE *src,
                         int &srcSamples);
-    int transposeMulti(SAMPLETYPE *dest, 
-                        const SAMPLETYPE *src, 
+    int transposeMulti(SAMPLETYPE *dest,
+                        const SAMPLETYPE *src,
                         int &srcSamples);
 
     double fract;

@@ -14,7 +14,7 @@
 <body class="normal">
 <hr>
 <h1>SoundTouch audio processing library v1.9.2</h1>
-<p class="normal">SoundTouch library Copyright © Olli Parviainen 2001-2015</p>
+<p class="normal">SoundTouch library Copyright ï¿½ Olli Parviainen 2001-2015</p>
 <hr>
 <h2>1. Introduction </h2>
 <p>SoundTouch is an open-source audio processing library that allows
@@ -34,16 +34,16 @@ same time</li>
 <p>SoundTouch WWW page: <a href="http://soundtouch.surina.net">http://soundtouch.surina.net</a></p>
 <hr>
 <h2>2. Compiling SoundTouch</h2>
-<p>Before compiling, notice that you can choose the sample data format if it's 
-desirable to use floating point sample data instead of 16bit integers. See 
+<p>Before compiling, notice that you can choose the sample data format if it's
+desirable to use floating point sample data instead of 16bit integers. See
 section &quot;sample data format&quot; for more information.</p>
-<p>Also notice that SoundTouch can use OpenMP instructions for parallel 
-computation to accelerate the runtime processing speed in multi-core systems, 
-however, these improvements need to be separately enabled before compiling. See 
+<p>Also notice that SoundTouch can use OpenMP instructions for parallel
+computation to accelerate the runtime processing speed in multi-core systems,
+however, these improvements need to be separately enabled before compiling. See
 OpenMP notes in Chapter 3 below.</p>
 <h3>2.1. Building in Microsoft Windows</h3>
-<p>Project files for Microsoft Visual C++ are supplied with the source 
-code package. Go to Microsoft WWW page to download 
+<p>Project files for Microsoft Visual C++ are supplied with the source
+code package. Go to Microsoft WWW page to download
 <a href="http://www.visualstudio.com/en-US/products/visual-studio-express-vs">
 Microsoft Visual Studio Express version for free</a>.
 </p>
@@ -55,26 +55,26 @@ instead of the make-win.bat script, directories bin and lib may need to
 be created manually to the SoundTouch package root for the final
 executables. The make-win.bat script creates these directories
 automatically. </p>
-<p><strong>OpenMP NOTE</strong>: If activating the OpenMP parallel computing in 
-the compilation, the target program will require additional vcomp dll library to 
-properly run. In Visual C++ 9.0 these libraries can be found in the following 
+<p><strong>OpenMP NOTE</strong>: If activating the OpenMP parallel computing in
+the compilation, the target program will require additional vcomp dll library to
+properly run. In Visual C++ 9.0 these libraries can be found in the following
 folders.</p>
 <ul>
-    <li>x86 32bit: C:\Program Files (x86)\Microsoft Visual Studio 
+    <li>x86 32bit: C:\Program Files (x86)\Microsoft Visual Studio
     9.0\VC\redist\x86\Microsoft.VC90.OPENMP\vcomp90.dll</li>
-    <li>x64 64bit: C:\Program Files (x86)\Microsoft Visual Studio 
+    <li>x64 64bit: C:\Program Files (x86)\Microsoft Visual Studio
     9.0\VC\redist\amd64\Microsoft.VC90.OPENMP\vcomp90.dll</li>
 </ul>
-<p>In Visual Studio 2008, a SP1 version may be required for these libraries. In 
-other VC++ versions the required library will be expectedly found in similar 
+<p>In Visual Studio 2008, a SP1 version may be required for these libraries. In
+other VC++ versions the required library will be expectedly found in similar
 &quot;redist&quot; location.</p>
-<p>Notice that as minor demonstration of a &quot;dll hell&quot; phenomenon both the 32-bit 
-and 64-bit version of vcomp90.dll have the same filename but different contents, 
+<p>Notice that as minor demonstration of a &quot;dll hell&quot; phenomenon both the 32-bit
+and 64-bit version of vcomp90.dll have the same filename but different contents,
 thus choose the proper version to allow the program start.</p>
 <h3>2.2. Building in Gnu platforms</h3>
 <p>The SoundTouch library compiles in practically any platform
 supporting GNU compiler (GCC) tools. SoundTouch requires GCC version 4.3 or later.</p>
-<p>To build and install the binaries, run the following commands in 
+<p>To build and install the binaries, run the following commands in
 /soundtouch directory:</p>
 <table border="0" cellpadding="0" cellspacing="4">
   <tbody>
@@ -102,8 +102,8 @@ Notice that "configure" file is not available before running the
       <pre>make         -</pre>
       </td>
       <td>
-      <p>Builds the SoundTouch library &amp; SoundStretch utility. You can 
-      optionally add &quot;-j&quot; switch after &quot;make&quot; to speed up the compilation in 
+      <p>Builds the SoundTouch library &amp; SoundStretch utility. You can
+      optionally add &quot;-j&quot; switch after &quot;make&quot; to speed up the compilation in
       multi-core systems.</p>
       </td>
     </tr>
@@ -134,21 +134,21 @@ these with the following command:</p>
 <h4><b>2.2.2 Problems with GCC compiler compatibility</b></h4>
 <p>At the release time the SoundTouch package has been tested to
 compile in GNU/Linux platform. However, If you have problems getting the
-SoundTouch library compiled, try disabling optimizations that are specific for 
+SoundTouch library compiled, try disabling optimizations that are specific for
 x86 processors by running <b>./configure</b> script with switch
 <blockquote>
 <pre>--enable-x86-optimizations=no</pre>
 </blockquote>
 
-Alternatively, if you don't use GNU Configure system, edit file "include/STTypes.h" 
+Alternatively, if you don't use GNU Configure system, edit file "include/STTypes.h"
 directly and remove the following definition:<blockquote>
   <pre>#define SOUNDTOUCH_ALLOW_X86_OPTIMIZATIONS 1</pre>
 </blockquote>
 
 <h4><b>2.2.3 Compiling Shared Library / DLL version in Cygwin</b></h4>
     <p>
-        The GNU compilation does not automatically create a shared-library version of 
-        SoundTouch (.so or .dll). If such is desired, then you can create it as follows 
+        The GNU compilation does not automatically create a shared-library version of
+        SoundTouch (.so or .dll). If such is desired, then you can create it as follows
         after running the usual compilation:</p>
     <blockquote>
   <pre>g++ -shared -static -DDLL_EXPORTS -I../../include -o SoundTouch.dll \
@@ -157,22 +157,22 @@ sstrip SoundTouch.dll</pre>
 </blockquote>
 
 <h3>2.1. Building in Android</h3>
-<p>Android compilation instructions are within the 
-    source code package, see file &quot;<b>source/Android-lib/README-SoundTouch-Android.html</b>&quot; 
+<p>Android compilation instructions are within the
+    source code package, see file &quot;<b>source/Android-lib/README-SoundTouch-Android.html</b>&quot;
     in the source code package. </p>
-<p>The Android compilation automatically builds separate .so library binaries 
-for ARM, X86 and MIPS processor architectures. For optimal device support, 
-include all these .so library binaries into the Android .apk application 
-package, so the target Android device can automatically choose the proper 
+<p>The Android compilation automatically builds separate .so library binaries
+for ARM, X86 and MIPS processor architectures. For optimal device support,
+include all these .so library binaries into the Android .apk application
+package, so the target Android device can automatically choose the proper
 library binary version to use.</p>
-<p>The <strong>source/Android-lib</strong> folder includes also an Android 
-example application that processes WAV audio files using SoundTouch library in 
+<p>The <strong>source/Android-lib</strong> folder includes also an Android
+example application that processes WAV audio files using SoundTouch library in
 Android devices.</p>
 
 <hr>
 <h2>3. About implementation &amp; Usage tips <h3>3.1. Supported sample data formats</h3>
 <p>The sample data format can be chosen between 16bit signed integer
-and 32bit floating point values. The default is 32bit floating point format, 
+and 32bit floating point values. The default is 32bit floating point format,
 which will also provide slightly better sound quality over the integer format. </p>
 <p> In Windows environment, the sample data format is chosen in file
 "STTypes.h" by choosing one of the following defines:</p>
@@ -356,7 +356,7 @@ computation burden</td>
 <h3>3.5 Performance Optimizations </h3>
 <p><strong>General optimizations:</strong></p>
 <p>The time-stretch routine has a 'quick' mode that substantially
-speeds up the algorithm but may slightly compromise the sound quality. 
+speeds up the algorithm but may slightly compromise the sound quality.
 This mode is activated by calling SoundTouch::setSetting()
 function with parameter&nbsp; id of SETTING_USE_QUICKSEEK and value
 "1", i.e. </p>
@@ -364,48 +364,48 @@ function with parameter&nbsp; id of SETTING_USE_QUICKSEEK and value
   <p>setSetting(SETTING_USE_QUICKSEEK, 1);</p>
 </blockquote>
 <p><strong>CPU-specific optimizations:</strong></p>
-<p>Intel x86 specific SIMD optimizations are implemented using compiler 
-intrinsics, providing about a 3x processing speedup for x86 compatible 
+<p>Intel x86 specific SIMD optimizations are implemented using compiler
+intrinsics, providing about a 3x processing speedup for x86 compatible
 processors vs. non-SIMD implementation:</p>
 <ul>
-    <li> Intel MMX optimized routines are used with x86 CPUs when 16bit integer 
+    <li> Intel MMX optimized routines are used with x86 CPUs when 16bit integer
     sample type is used</li>
-  <li> Intel SSE optimized routines are used with x86 CPUs when 32bit floating 
+  <li> Intel SSE optimized routines are used with x86 CPUs when 32bit floating
   point sample type is used</li>
 </ul>
 <h3>3.5 OpenMP parallel computation</h3>
-<p>SoundTouch 1.9 onwards support running the algorithms parallel in several CPU 
-cores. Based on benchmark the experienced multi-core processing speed-up gain 
-ranges between +30% (on a high-spec dual-core x86 Windows PC) to 215% (on a moderately low-spec 
+<p>SoundTouch 1.9 onwards support running the algorithms parallel in several CPU
+cores. Based on benchmark the experienced multi-core processing speed-up gain
+ranges between +30% (on a high-spec dual-core x86 Windows PC) to 215% (on a moderately low-spec
 quad-core ARM of Raspberry Pi2).</p>
-<p>The parallel computing support is implemented using OpenMP spec 3.0 
-instructions. These instructions are supported by Visual C++ 2008 and later, and 
-GCC v4.2 and later. Compilers that do not supporting OpenMP will ignore these 
-optimizations and routines will still work properly. Possible warnings about 
+<p>The parallel computing support is implemented using OpenMP spec 3.0
+instructions. These instructions are supported by Visual C++ 2008 and later, and
+GCC v4.2 and later. Compilers that do not supporting OpenMP will ignore these
+optimizations and routines will still work properly. Possible warnings about
 unknown #pragmas are related to OpenMP support and can be safely ignored.</p>
-<p>The OpenMP improvements are disabled by default, and need to be enabled by 
-developer during compile-time. Reason for this is that parallel processing adds 
-moderate runtime overhead in managing the multi-threading, so it may not be 
-necessary nor desirable in all applications. For example real-time processing 
-that is not constrained by CPU power will not benefit of speed-up provided by 
-the parallel processing, in the contrary it may increase power consumption due 
+<p>The OpenMP improvements are disabled by default, and need to be enabled by
+developer during compile-time. Reason for this is that parallel processing adds
+moderate runtime overhead in managing the multi-threading, so it may not be
+necessary nor desirable in all applications. For example real-time processing
+that is not constrained by CPU power will not benefit of speed-up provided by
+the parallel processing, in the contrary it may increase power consumption due
 to the increased overhead.</p>
-<p>However, applications that run on low-spec multi-core CPUs and may otherwise 
-have possibly constrained performance will benefit of the OpenMP improvements. 
+<p>However, applications that run on low-spec multi-core CPUs and may otherwise
+have possibly constrained performance will benefit of the OpenMP improvements.
 This include for example multi-core embedded devices.</p>
-<p>OpenMP parallel computation can be enabled before compiling SoundTouch 
+<p>OpenMP parallel computation can be enabled before compiling SoundTouch
 library as follows:</p>
 <ul>
     <li><strong>Visual Studio</strong>: Open properties for the <strong>SoundTouch
-    </strong>sub-project, browse to <strong>C/C++</strong> and <strong>Language 
-    </strong>settings. Set 
-    there &quot;<strong>OpenMP support</strong>&quot; to &quot;<strong>Yes</strong>&quot;. Alternatively add 
-    <strong>/openmp</strong> switch to command-line 
+    </strong>sub-project, browse to <strong>C/C++</strong> and <strong>Language
+    </strong>settings. Set
+    there &quot;<strong>OpenMP support</strong>&quot; to &quot;<strong>Yes</strong>&quot;. Alternatively add
+    <strong>/openmp</strong> switch to command-line
     parameters</li>
-    <li><strong>GNU</strong>: Run the configure script with &quot;<strong>./configure 
+    <li><strong>GNU</strong>: Run the configure script with &quot;<strong>./configure
     --enable-openmp</strong>&quot; switch, then run make as usually</li>
-    <li><strong>Android</strong>: Add &quot;<strong>-fopenmp</strong>&quot; switches to compiler &amp; linker 
-    options, see README-SoundTouch-Android.html in the source code package for 
+    <li><strong>Android</strong>: Add &quot;<strong>-fopenmp</strong>&quot; switches to compiler &amp; linker
+    options, see README-SoundTouch-Android.html in the source code package for
     more detailed instructions.</li>
 </ul>
 <hr>
@@ -559,7 +559,7 @@ and estimates the BPM rate:</p>
   <pre>soundstretch stdin -bpm</pre>
 </blockquote>
 <p><strong>Example 6</strong></p>
-<p>The following command tunes song from original 440Hz tuning to 432Hz tuning: 
+<p>The following command tunes song from original 440Hz tuning to 432Hz tuning:
 this corresponds to lowering the pitch by -0.318 semitones:</p>
 <blockquote>
   <pre>soundstretch original.wav output.wav -pitch=-0.318</pre>
@@ -574,22 +574,22 @@ this corresponds to lowering the pitch by -0.318 semitones:</p>
     <p><b>1.9.1:</b></p>
     <ul>
         <li>Improved SoundTouch::flush() function so that it returns precisely the desired amount of samples for exact output duration control</li>
-        <li>Redesigned quickseek algorithm for improved sound quality when using the quickseek mode. The new quickseek algorithm can find 99% as good results as the 
-		default full-scan mode, while the quickseek algorithm is remarkable less 
+        <li>Redesigned quickseek algorithm for improved sound quality when using the quickseek mode. The new quickseek algorithm can find 99% as good results as the
+		default full-scan mode, while the quickseek algorithm is remarkable less
 		CPU intensive.</li>
         <li>Added adaptive integer divider scaling for improved sound quality when using integer processing algorithm
         </li>
     </ul>
 <p><b>1.9:</b></p>
 <ul>
-    <li>Added support for parallel computation support via OpenMP primitives for better performance in multicore systems. 
-        Benchmarks show that achieved parallel processing speedup improvement 
-    typically range from +30% (x86 dual-core) to +180% (ARM quad-core). The 
-    OpenMP optimizations are disabled by default, see OpenMP notes above in this 
+    <li>Added support for parallel computation support via OpenMP primitives for better performance in multicore systems.
+        Benchmarks show that achieved parallel processing speedup improvement
+    typically range from +30% (x86 dual-core) to +180% (ARM quad-core). The
+    OpenMP optimizations are disabled by default, see OpenMP notes above in this
     readme file how to enabled these optimizations.</li>
-    <li>Android: Added support for Android devices featuring X86 and MIPS CPUs, 
+    <li>Android: Added support for Android devices featuring X86 and MIPS CPUs,
     in addition to ARM CPUs.</li>
-    <li>Android: More versatile Android example application that processes WAV 
+    <li>Android: More versatile Android example application that processes WAV
     audio files with SoundTouch library</li>
     <li>Replaced Windows-like 'BOOL' types with native 'bool'</li>
     <li>Changed documentation token to "dist_doc_DATA" in Makefile.am file</li>
@@ -598,9 +598,9 @@ this corresponds to lowering the pitch by -0.318 semitones:</p>
 <p><b>1.8.0:</b></p>
 <ul>
     <li>Added support for multi-channel audio processing</li>
-    <li>Added support for <b>cubic</b> and <b>shannon</b> interpolation for rate and pitch shift effects besides 
+    <li>Added support for <b>cubic</b> and <b>shannon</b> interpolation for rate and pitch shift effects besides
         the original <b>linear</b> interpolation, to reduce aliasing at high frequencies due to interpolation.
-        Cubic interpolation is used as default for floating point processing, and linear interpolation for integer 
+        Cubic interpolation is used as default for floating point processing, and linear interpolation for integer
         processing.</li>
     <li>Fixed bug in anti-alias filtering that limited stop-band attenuation to -10 dB instead of <-50dB, and
         increased filter length from 32 to 64 taps to further reduce aliasing due to frequency folding.</li>
@@ -614,7 +614,7 @@ this corresponds to lowering the pitch by -0.318 semitones:</p>
 <p><b>1.7.0:</b></p>
 <ul>
     <li>Sound quality improvements/li>
-    <li>Improved flush() to adjust output sound stream duration to match better with 
+    <li>Improved flush() to adjust output sound stream duration to match better with
         ideal duration</li>
     <li>Rewrote x86 cpu feature check to resolve compatibility problems</li>
     <li>Configure script automatically checks if CPU supports mmx & sse compatibility for GNU platform, and
@@ -761,7 +761,7 @@ accessing the FIFOSampleBuffer class from external files.</li>
 
 <p><b>1.7.0:</b></p>
 <ul>
-    <li>Bugfixes in Wavfile: exception string formatting, avoid getLengthMs() integer 
+    <li>Bugfixes in Wavfile: exception string formatting, avoid getLengthMs() integer
         precision overflow, support WAV files using 24/32bit sample format.</li>
 </ul>
     <p><b>1.5.0:</b></p>
@@ -823,7 +823,7 @@ submitted bugfixes:</p>
   <li> Richard Ash</li>
   <li> Stanislav Brabec</li>
   <li> Christian Budde</li>
-  <li> Chris Bryan</li>  
+  <li> Chris Bryan</li>
   <li> Jacek Caban</li>
   <li> Brian Cameron</li>
   <li> Jason Champion</li>
@@ -837,7 +837,7 @@ submitted bugfixes:</p>
   <li> Jason Garland</li>
   <li> Takashi Iwai</li>
     <li> Thomas Klausner</li>
-    <li> Mathias Möhl</li>
+    <li> Mathias Mï¿½hl</li>
   <li> Yuval Naveh</li>
   <li> Paulo Pizarro</li>
   <li> Blaise Potard</li>
