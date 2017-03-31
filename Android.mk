@@ -22,6 +22,10 @@ LOCAL_PATH := $(call my-dir)
 include $(CLEAR_VARS)
 LOCAL_LDLIBS += -llog -landroid
 
+# OpenMP mode : enable these flags to enable using OpenMP for parallel computation
+LOCAL_CFLAGS += -fopenmp
+LOCAL_LDFLAGS += -fopenmp
+
 LOCAL_C_INCLUDES += $(LOCAL_PATH)
 LOCAL_C_INCLUDES += $(realpath $(LOCAL_PATH)/..)
 LOCAL_C_INCLUDES += $(realpath $(LOCAL_PATH)/include/)
@@ -31,7 +35,6 @@ LOCAL_SRC_FILES += source/SoundTouch/FIFOSampleBuffer.cpp
 LOCAL_SRC_FILES += source/SoundTouch/FIRFilter.cpp
 LOCAL_SRC_FILES += source/SoundTouch/cpu_detect_x86.cpp
 LOCAL_SRC_FILES += source/SoundTouch/sse_optimized.cpp
-LOCAL_SRC_FILES += source/SoundStretch/WavFile.cpp
 LOCAL_SRC_FILES += source/SoundTouch/RateTransposer.cpp
 LOCAL_SRC_FILES += source/SoundTouch/InterpolateCubic.cpp
 LOCAL_SRC_FILES += source/SoundTouch/InterpolateLinear.cpp

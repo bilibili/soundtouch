@@ -378,8 +378,6 @@ int TDStretch::seekBestOverlapPositionQuick(const SAMPLETYPE *refPos)
     bestCorr2 = FLT_MIN;
     bestOffs2 = 0;
 
-    int best = 0;
-
     // Scans for the best correlation value by testing each possible position
     // over the permitted range. Look for two best matches on the first pass to
     // increase possibility of ideal match.
@@ -436,7 +434,6 @@ int TDStretch::seekBestOverlapPositionQuick(const SAMPLETYPE *refPos)
         {
             bestCorr = corr;
             bestOffs = i;
-            best = 1;
         }
     }
 
@@ -458,7 +455,6 @@ int TDStretch::seekBestOverlapPositionQuick(const SAMPLETYPE *refPos)
         {
             bestCorr = corr;
             bestOffs = i;
-            best = 2;
         }
     }
 

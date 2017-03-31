@@ -193,7 +193,7 @@ uint FIRFilter::evaluateFilterMulti(SAMPLETYPE *dest, const SAMPLETYPE *src, uin
     for (j = 0; j < end; j += numChannels)
     {
         const SAMPLETYPE *ptr;
-        LONG_SAMPLETYPE sums[16];
+        LONG_SAMPLETYPE sums[16] = {0};
         uint c, i;
 
         for (c = 0; c < numChannels; c ++)

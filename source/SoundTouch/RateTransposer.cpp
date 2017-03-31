@@ -130,8 +130,6 @@ void RateTransposer::putSamples(const SAMPLETYPE *samples, uint nSamples)
 // the 'set_returnBuffer_size' function.
 void RateTransposer::processSamples(const SAMPLETYPE *src, uint nSamples)
 {
-    uint count;
-
     if (nSamples == 0) return;
 
     // Store samples to input buffer
@@ -141,7 +139,7 @@ void RateTransposer::processSamples(const SAMPLETYPE *src, uint nSamples)
     // the filter
     if (bUseAAFilter == false)
     {
-        count = pTransposer->transpose(outputBuffer, inputBuffer);
+        pTransposer->transpose(outputBuffer, inputBuffer);
         return;
     }
 
