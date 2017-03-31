@@ -75,12 +75,12 @@ namespace soundtouch
     /// runtime performance so recommendation is to keep this off.
     // #define USE_MULTICH_ALWAYS
 
-    #if (defined(__SOFTFP__) && defined(ANDROID))
+    // #if (defined(__SOFTFP__) && defined(ANDROID))
         // For Android compilation: Force use of Integer samples in case that
         // compilation uses soft-floating point emulation - soft-fp is way too slow
         #undef  SOUNDTOUCH_FLOAT_SAMPLES
         #define SOUNDTOUCH_INTEGER_SAMPLES      1
-    #endif
+    // #endif
 
     #if !(SOUNDTOUCH_INTEGER_SAMPLES || SOUNDTOUCH_FLOAT_SAMPLES)
 
@@ -164,7 +164,7 @@ namespace soundtouch
 };
 
 // define ST_NO_EXCEPTION_HANDLING switch to disable throwing std exceptions:
-// #define ST_NO_EXCEPTION_HANDLING    1
+#define ST_NO_EXCEPTION_HANDLING    1
 #ifdef ST_NO_EXCEPTION_HANDLING
     // Exceptions disabled. Throw asserts instead if enabled.
     #include <assert.h>
