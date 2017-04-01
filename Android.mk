@@ -43,6 +43,7 @@ LOCAL_SRC_FILES += source/SoundTouch/TDStretch.cpp
 LOCAL_SRC_FILES += source/SoundTouch/BPMDetect.cpp
 LOCAL_SRC_FILES += source/SoundTouch/PeakFinder.cpp
 LOCAL_SRC_FILES += source/SoundTouch/SoundTouch.cpp
+LOCAL_SRC_FILES += source/SoundTouch/mmx_optimized.cpp
 LOCAL_SRC_FILES += ijksoundtouch_wrap.cpp
 
 LOCAL_STATIC_LIBRARIES := cpufeatures
