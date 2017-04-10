@@ -304,7 +304,9 @@ int TDStretch::seekBestOverlapPositionFull(const SAMPLETYPE *refPos)
     // over the permitted range.
     bestCorr = calcCrossCorr(refPos, pMidBuffer, norm);
 
+#ifdef OPENMP
     #pragma omp parallel for
+#endif
     for (i = 1; i < seekLength; i ++)
     {
         double corr;
@@ -329,7 +331,9 @@ int TDStretch::seekBestOverlapPositionFull(const SAMPLETYPE *refPos)
             // For optimal performance, enter critical section only in case that best value found.
             // in such case repeat 'if' condition as it's possible that parallel execution may have
             // updated the bestCorr value in the mean time
+#ifdef OPENMP
             #pragma omp critical
+#endif
             if (corr > bestCorr)
             {
                 bestCorr = corr;

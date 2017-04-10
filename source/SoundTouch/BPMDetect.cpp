@@ -226,7 +226,9 @@ void BPMDetect::updateXCorr(int process_samples)
     assert(buffer->numSamples() >= (uint)(process_samples + windowLen));
 
     pBuffer = buffer->ptrBegin();
+#ifdef OPENMP
     #pragma omp parallel for
+#endif
     for (offs = windowStart; offs < windowLen; offs ++)
     {
         LONG_SAMPLETYPE sum;

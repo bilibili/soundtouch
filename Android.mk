@@ -23,8 +23,8 @@ include $(CLEAR_VARS)
 LOCAL_LDLIBS += -llog -landroid
 
 # OpenMP mode : enable these flags to enable using OpenMP for parallel computation
-LOCAL_CFLAGS += -fopenmp
-LOCAL_LDFLAGS += -fopenmp
+# LOCAL_CFLAGS += -fopenmp
+# LOCAL_LDFLAGS += -fopenmp
 
 LOCAL_C_INCLUDES += $(LOCAL_PATH)
 LOCAL_C_INCLUDES += $(realpath $(LOCAL_PATH)/..)
@@ -49,6 +49,6 @@ LOCAL_SRC_FILES += ijksoundtouch_wrap.cpp
 LOCAL_STATIC_LIBRARIES := cpufeatures
 
 LOCAL_MODULE := ijksoundtouch
-include $(BUILD_SHARED_LIBRARY)
+include $(BUILD_STATIC_LIBRARY)
 
 $(call import-module,android/cpufeatures)
