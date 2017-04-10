@@ -20,7 +20,7 @@
 LOCAL_PATH := $(call my-dir)
 
 include $(CLEAR_VARS)
-LOCAL_LDLIBS += -llog -landroid
+# LOCAL_LDLIBS += -llog -landroid
 
 # OpenMP mode : enable these flags to enable using OpenMP for parallel computation
 # LOCAL_CFLAGS += -fopenmp
@@ -45,8 +45,6 @@ LOCAL_SRC_FILES += source/SoundTouch/PeakFinder.cpp
 LOCAL_SRC_FILES += source/SoundTouch/SoundTouch.cpp
 LOCAL_SRC_FILES += source/SoundTouch/mmx_optimized.cpp
 LOCAL_SRC_FILES += ijksoundtouch_wrap.cpp
-
-LOCAL_STATIC_LIBRARIES := cpufeatures
 
 LOCAL_MODULE := ijksoundtouch
 include $(BUILD_STATIC_LIBRARY)
